@@ -1,0 +1,28 @@
+services:
+    phlexible_element_task.type.general:
+        class: Phlexible\Bundle\ElementTaskBundle\Task\Type\GeneralType
+        arguments:
+            - "@translator"
+        tags:
+            - {name: phlexible_task.type}
+
+    phlexible_element_task.type.publish:
+        class: Phlexible\Bundle\ElementTaskBundle\Task\Type\PublishType
+        arguments:
+            - "@translator"
+        tags:
+            - {name: phlexible_task.type}
+
+    phlexible_element_task.type.set_offline:
+        class: Phlexible\Bundle\ElementTaskBundle\Task\Type\SetOfflineType
+        arguments:
+            - "@translator"
+        tags:
+            - {name: phlexible_task.type}
+
+    phlexible_element_task.type.delete:
+        class: Phlexible\Bundle\ElementTaskBundle\Task\Type\DeleteType
+        arguments:
+            - "@translator"
+        tags:
+            - {name: phlexible_task.type}
