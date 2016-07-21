@@ -24,9 +24,7 @@ class DeleteType extends AbstractType
     }
 
     /**
-     * Get required parameters for this task
-     *
-     * @return array
+     * {@inheritdoc}
      */
     public function getRequiredParameters()
     {
@@ -34,13 +32,11 @@ class DeleteType extends AbstractType
     }
 
     /**
-     * Return the task resource
-     *
-     * @return string
+     * {@inheritdoc}
      */
-    public function getResource()
+    public function getRole()
     {
-        return 'elements_delete';
+        return 'ROLE_ELEMENT_DELETE';
     }
 
     /**

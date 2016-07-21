@@ -1,0 +1,18 @@
+{
+    "version": "1.0",
+    "name": "phlexible/element-task-bundle",
+    "path-mappings": {
+        "/phlexible/phlexibleelementtask/scripts": "Resources/scripts",
+        "/phlexible/phlexibleelementtask/styles": "Resources/styles"
+    },
+    "bindings": {
+        "f537382f-e1af-5e26-bc88-6eda5741fdf3": {
+            "query": "/phlexible/phlexibleelementtask/scripts/**/*.js",
+            "type": "phlexible/scripts"
+        },
+        "ff1ab77a-fb01-5410-95cf-477147e83d53": {
+            "query": "/phlexible/phlexibleelementtask/styles/**/*.css",
+            "type": "phlexible/styles"
+        }
+    }
+}

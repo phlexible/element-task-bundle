@@ -24,9 +24,7 @@ class PublishType extends AbstractType
     }
 
     /**
-     * Get required parameters for this task
-     *
-     * @return array
+     * {@inheritdoc}
      */
     public function getRequiredParameters()
     {
@@ -34,13 +32,11 @@ class PublishType extends AbstractType
     }
 
     /**
-     * Return the task resource
-     *
-     * @return string
+     * {@inheritdoc}
      */
-    public function getResource()
+    public function getRole()
     {
-        return 'elements_publish';
+        return 'ROLE_ELEMENT_PUBLISH';
     }
 
     /**

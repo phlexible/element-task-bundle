@@ -51,9 +51,9 @@ abstract class AbstractType implements TypeInterface
     /**
      * {@inheritdoc}
      */
-    public function getResource()
+    public function getRole()
     {
-        return 'elements';
+        return 'ROLE_ELEMENTS';
     }
 
     /**

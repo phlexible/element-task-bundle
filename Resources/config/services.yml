@@ -7,3 +7,10 @@ services:
             - "@security.token_storage"
         tags:
             - {name: kernel.event_subscriber}
+
+    # role providers
+    phlexible_element_task.role_provider:
+        class: Phlexible\Bundle\ElementTaskBundle\RoleProvider\ElementTaskRoleProvider
+        public: false
+        tags:
+            - {name: phlexible_gui.role_provider}
