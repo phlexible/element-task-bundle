@@ -12,7 +12,7 @@
 namespace Phlexible\Bundle\ElementTaskBundle\Task\Type;
 
 /**
- * Set element offline task type
+ * Set element offline task type.
  *
  * @author Stephan Wentz <sw@brainbits.net>
  */
