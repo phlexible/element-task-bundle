@@ -96,16 +96,12 @@ abstract class AbstractNodeType implements TypeInterface
         return 'bla';
     }
 
-<<<<<<< HEAD:Task/Type/AbstractNodeType.php
     /**
      * @return string
      */
     abstract protected function getSummaryKey();
 
     /**
-=======
-    /*
->>>>>>> Applied fixes from StyleCI:Task/Type/AbstractType.php
      * Return associative array for placeholder replacement
      *
      * @return array
