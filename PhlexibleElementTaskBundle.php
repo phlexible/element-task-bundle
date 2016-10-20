@@ -11,12 +11,10 @@
 
 namespace Phlexible\Bundle\ElementTaskBundle;
 
-use Phlexible\Bundle\ProblemBundle\Problem;
-use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
 /**
- * Element task bundle
+ * Element task bundle.
  *
  * @author Stephan Wentz <sw@brainbits.net>
  */

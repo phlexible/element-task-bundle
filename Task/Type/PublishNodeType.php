@@ -12,7 +12,7 @@
 namespace Phlexible\Bundle\ElementTaskBundle\Task\Type;
 
 /**
- * Publish node task type
+ * Publish node task type.
  *
  * @author Stephan Wentz <sw@brainbits.net>
  */

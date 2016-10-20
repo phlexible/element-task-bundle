@@ -12,16 +12,16 @@
 namespace Phlexible\Bundle\ElementTaskBundle\EventListener;
 
 use Phlexible\Bundle\TaskBundle\Entity\Task;
+use Phlexible\Bundle\TaskBundle\Model\TaskManagerInterface;
 use Phlexible\Bundle\TreeBundle\Event\NodeEvent;
 use Phlexible\Bundle\TreeBundle\Event\PublishNodeEvent;
 use Phlexible\Bundle\TreeBundle\Event\SetNodeOfflineEvent;
-use Phlexible\Bundle\TaskBundle\Model\TaskManagerInterface;
 use Phlexible\Bundle\TreeBundle\TreeEvents;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorageInterface;
 
 /**
- * Task listener
+ * Task listener.
  *
  * @author Stephan Wentz <sw@brainbits.net>
  */
@@ -79,7 +79,7 @@ class TaskListener implements EventSubscriberInterface
             [
                 'type' => 'element',
                 'type_id' => $node->getId(),
-                'language' => $language
+                'language' => $language,
             ],
             'element_tasks.publish_node',
             $this->tokenStorage->getToken()->getUser()->getId()
@@ -106,7 +106,7 @@ class TaskListener implements EventSubscriberInterface
             [
                 'type' => 'element',
                 'type_id' => $node->getId(),
-                'language' => $language
+                'language' => $language,
             ],
             'element_tasks.set_node_offline',
             $this->tokenStorage->getToken()->getUser()->getId()
@@ -132,7 +132,7 @@ class TaskListener implements EventSubscriberInterface
         $this->doTask(
             [
                 'type' => 'element',
-                'type_id' => $node->getId()
+                'type_id' => $node->getId(),
             ],
             'element_tasks.delete_node',
             $this->tokenStorage->getToken()->getUser()->getId()
@@ -153,7 +153,7 @@ class TaskListener implements EventSubscriberInterface
                     Task::STATUS_OPEN,
                     Task::STATUS_REJECTED,
                     Task::STATUS_REOPENED,
-                ]
+                ],
             ]
         );
 
@@ -168,7 +168,7 @@ class TaskListener implements EventSubscriberInterface
             $taskPayload = $task->getPayload();
             ksort($taskPayload);
 
-            if ($payload != $taskPayload) {
+            if ($payload !== $taskPayload) {
                 continue;
             }
 

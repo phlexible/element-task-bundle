@@ -12,7 +12,7 @@
 namespace Phlexible\Bundle\ElementTaskBundle\Task\Type;
 
 /**
- * General node task type
+ * General node task type.
  *
  * @author Stephan Wentz <sw@brainbits.net>
  */
@@ -27,7 +27,7 @@ class GeneralNodeType extends AbstractNodeType
     }
 
     /**
-     * Get required parameters for this task
+     * Get required parameters for this task.
      *
      * @return array
      */

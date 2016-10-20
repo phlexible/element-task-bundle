@@ -14,7 +14,7 @@ namespace Phlexible\Bundle\ElementTaskBundle\Tests;
 use Phlexible\Bundle\ElementTaskBundle\PhlexibleElementTaskBundle;
 
 /**
- * Element task bundle test
+ * Element task bundle test.
  *
  * @author Stephan Wentz <sw@brainbits.net>
  */

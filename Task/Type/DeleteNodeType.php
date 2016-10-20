@@ -12,7 +12,7 @@
 namespace Phlexible\Bundle\ElementTaskBundle\Task\Type;
 
 /**
- * Delete node task type
+ * Delete node task type.
  *
  * @author Stephan Wentz <sw@brainbits.net>
  */

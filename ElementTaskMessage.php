@@ -14,7 +14,7 @@ namespace Phlexible\Bundle\ElementTaskBundle;
 use Phlexible\Bundle\MessageBundle\Entity\Message;
 
 /**
- * Element task message
+ * Element task message.
  *
  * @author Stephan Wentz <sw@brainbits.net>
  */

@@ -14,7 +14,7 @@ namespace Phlexible\Bundle\ElementTaskBundle\RoleProvider;
 use Phlexible\Bundle\GuiBundle\Security\RoleProvider\RoleProvider;
 
 /**
- * Element task role provider
+ * Element task role provider.
  *
  * @author Stephan Wentz <sw@brainbits.net>
  */
