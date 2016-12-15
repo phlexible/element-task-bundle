@@ -12,43 +12,41 @@
 namespace Phlexible\Bundle\ElementTaskBundle\Task\Type;
 
 /**
- * General element task type.
+ * Set node offline task type.
  *
  * @author Stephan Wentz <sw@brainbits.net>
  */
-class GeneralType extends AbstractType
+class SetNodeOfflineType extends AbstractNodeType
 {
     /**
      * {@inheritdoc}
      */
     public function getName()
     {
-        return 'element.general';
+        return 'element_tasks.set_node_offline';
     }
 
     /**
-     * Get required parameters for this task.
-     *
-     * @return array
+     * {@inheritdoc}
      */
     public function getRequiredParameters()
     {
-        return array('type', 'type_id');
+        return array('id', 'language');
     }
 
     /**
-     * @return string
+     * {@inheritdoc}
      */
-    protected function getTitleKey()
+    public function getRole()
     {
-        return 'elements.task_general';
+        return 'ROLE_ELEMENT_PUBLISH';
     }
 
     /**
-     * @return string
+     * {@inheritdoc}
      */
-    protected function getTextKey()
+    protected function getSummaryKey()
     {
-        return 'elements.task_general_template';
+        return 'elements.task_set_element_offline_template';
     }
 }

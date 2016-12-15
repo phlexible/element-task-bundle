@@ -12,49 +12,35 @@
 namespace Phlexible\Bundle\ElementTaskBundle\Task\Type;
 
 /**
- * Delete element task type.
+ * General node task type.
  *
  * @author Stephan Wentz <sw@brainbits.net>
  */
-class DeleteType extends AbstractType
+class GeneralNodeType extends AbstractNodeType
 {
     /**
      * {@inheritdoc}
      */
     public function getName()
     {
-        return 'element.delete';
+        return 'element_tasks.general_node';
     }
 
     /**
-     * {@inheritdoc}
+     * Get required parameters for this task.
+     *
+     * @return array
      */
     public function getRequiredParameters()
     {
-        return array('type', 'type_id');
+        return array('id');
     }
 
     /**
      * {@inheritdoc}
      */
-    public function getRole()
+    protected function getSummaryKey()
     {
-        return 'ROLE_ELEMENT_DELETE';
-    }
-
-    /**
-     * @return string
-     */
-    protected function getTitleKey()
-    {
-        return 'elements.task_delete_element';
-    }
-
-    /**
-     * @return string
-     */
-    protected function getTextKey()
-    {
-        return 'elements.task_delete_element_template';
+        return 'elements_tasks.general_node_template';
     }
 }
