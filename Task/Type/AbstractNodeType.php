@@ -10,6 +10,7 @@ namespace Phlexible\Bundle\ElementTaskBundle\Task\Type;
 
 use Phlexible\Bundle\TaskBundle\Entity\Task;
 use Phlexible\Bundle\TaskBundle\Task\Type\TypeInterface;
+use Phlexible\Bundle\TreeBundle\Model\TreeNodeInterface;
 use Symfony\Component\Translation\TranslatorInterface;
 
 /**
@@ -17,7 +18,7 @@ use Symfony\Component\Translation\TranslatorInterface;
  *
  * @author Stephan Wentz <sw@brainbits.net>
  */
-abstract class AbstractType implements TypeInterface
+abstract class AbstractNodeType implements TypeInterface
 {
     /**
      * @var TranslatorInterface
@@ -43,14 +44,6 @@ abstract class AbstractType implements TypeInterface
     /**
      * {@inheritdoc}
      */
-    public function getComponent()
-    {
-        return 'elements';
-    }
-
-    /**
-     * {@inheritdoc}
-     */
     public function getRole()
     {
         return 'ROLE_ELEMENTS';
@@ -59,23 +52,35 @@ abstract class AbstractType implements TypeInterface
     /**
      * {@inheritdoc}
      */
-    public function getTitle(Task $task)
+    public function createPayload($payload)
     {
-        return $this->translator->trans($this->getTitleKey(), [], 'gui', 'en');
+        if (!$payload instanceof TreeNodeInterface) {
+            throw new \InvalidArgumentException('Payload has to be tree node.');
+        }
+
+        return array('id' => $payload->getId());
     }
 
     /**
      * {@inheritdoc}
      */
-    public function getText(Task $task)
+    public function createSummary($title)
     {
-        return $this->translator->trans($this->getTextKey(), [], 'gui', 'en');
+        return $this->translator->trans($this->getSummaryKey(), [], 'gui', 'en');
     }
 
     /**
      * {@inheritdoc}
      */
-    public function getLink(Task $task)
+    public function createDescription($description)
+    {
+        return $description;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function createLink(Task $task)
     {
         return 'bla';
     }
@@ -83,10 +88,15 @@ abstract class AbstractType implements TypeInterface
     /**
      * {@inheritdoc}
      */
-    public function getMenuHandle(Task $task)
+    public function createMenuHandle(Task $task)
     {
         return 'bla';
     }
+
+    /**
+     * @return string
+     */
+    abstract protected function getSummaryKey();
 
     /**
      * Return associative array for placeholder replacement

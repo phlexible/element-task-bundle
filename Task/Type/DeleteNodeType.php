@@ -9,18 +9,18 @@
 namespace Phlexible\Bundle\ElementTaskBundle\Task\Type;
 
 /**
- * Publish element task type
+ * Delete node task type
  *
  * @author Stephan Wentz <sw@brainbits.net>
  */
-class PublishType extends AbstractType
+class DeleteNodeType extends AbstractNodeType
 {
     /**
      * {@inheritdoc}
      */
     public function getName()
     {
-        return 'element.publish';
+        return 'element_tasks.delete_node';
     }
 
     /**
@@ -28,7 +28,7 @@ class PublishType extends AbstractType
      */
     public function getRequiredParameters()
     {
-        return array('type', 'type_id', 'language');
+        return array('id');
     }
 
     /**
@@ -36,22 +36,14 @@ class PublishType extends AbstractType
      */
     public function getRole()
     {
-        return 'ROLE_ELEMENT_PUBLISH';
+        return 'ROLE_ELEMENT_DELETE';
     }
 
     /**
-     * @return string
+     * {@inheritdoc}
      */
-    protected function getTitleKey()
+    protected function getSummaryKey()
     {
-        return 'elements.task_publish_element';
-    }
-
-    /**
-     * @return string
-     */
-    protected function getTextKey()
-    {
-        return 'elements.task_publish_element_template';
+        return 'element_tasks.delete_node_template';
     }
 }

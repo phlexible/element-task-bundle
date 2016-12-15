@@ -9,18 +9,18 @@
 namespace Phlexible\Bundle\ElementTaskBundle\Task\Type;
 
 /**
- * Set element offline task type
+ * Publish node task type
  *
  * @author Stephan Wentz <sw@brainbits.net>
  */
-class SetOfflineType extends AbstractType
+class PublishNodeType extends AbstractNodeType
 {
     /**
      * {@inheritdoc}
      */
     public function getName()
     {
-        return 'elements.set_offline';
+        return 'element_tasks.publish_node';
     }
 
     /**
@@ -28,7 +28,7 @@ class SetOfflineType extends AbstractType
      */
     public function getRequiredParameters()
     {
-        return array('type', 'type_id', 'language');
+        return array('id', 'language');
     }
 
     /**
@@ -40,18 +40,10 @@ class SetOfflineType extends AbstractType
     }
 
     /**
-     * @return string
+     * {@inheritdoc}
      */
-    protected function getTitleKey()
+    protected function getSummaryKey()
     {
-        return 'elements.task_set_element_offline';
-    }
-
-    /**
-     * @return string
-     */
-    protected function getTextKey()
-    {
-        return 'elements.task_set_element_offline_template';
+        return 'element_tasks.publish_node_template';
     }
 }

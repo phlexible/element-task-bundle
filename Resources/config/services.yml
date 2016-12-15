@@ -8,6 +8,15 @@ services:
         tags:
             - {name: kernel.event_subscriber}
 
+    phlexible_element_task.listener.load_data:
+        class: Phlexible\Bundle\ElementTaskBundle\EventListener\LoadDataListener
+        arguments:
+            - "@phlexible_task.task_manager"
+            - "@phlexible_user.user_manager"
+            - "@security.token_storage"
+        tags:
+            - {name: kernel.event_listener, event: phlexible_element.load_data, method: onLoadData}
+
     # role providers
     phlexible_element_task.role_provider:
         class: Phlexible\Bundle\ElementTaskBundle\RoleProvider\ElementTaskRoleProvider

@@ -9,18 +9,18 @@
 namespace Phlexible\Bundle\ElementTaskBundle\Task\Type;
 
 /**
- * Delete element task type
+ * Set node offline task type
  *
  * @author Stephan Wentz <sw@brainbits.net>
  */
-class DeleteType extends AbstractType
+class SetNodeOfflineType extends AbstractNodeType
 {
     /**
      * {@inheritdoc}
      */
     public function getName()
     {
-        return 'element.delete';
+        return 'element_tasks.set_node_offline';
     }
 
     /**
@@ -28,7 +28,7 @@ class DeleteType extends AbstractType
      */
     public function getRequiredParameters()
     {
-        return array('type', 'type_id');
+        return array('id', 'language');
     }
 
     /**
@@ -36,22 +36,14 @@ class DeleteType extends AbstractType
      */
     public function getRole()
     {
-        return 'ROLE_ELEMENT_DELETE';
+        return 'ROLE_ELEMENT_PUBLISH';
     }
 
     /**
-     * @return string
+     * {@inheritdoc}
      */
-    protected function getTitleKey()
+    protected function getSummaryKey()
     {
-        return 'elements.task_delete_element';
-    }
-
-    /**
-     * @return string
-     */
-    protected function getTextKey()
-    {
-        return 'elements.task_delete_element_template';
+        return 'elements.task_set_element_offline_template';
     }
 }

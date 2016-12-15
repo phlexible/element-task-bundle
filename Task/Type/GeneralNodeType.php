@@ -9,18 +9,18 @@
 namespace Phlexible\Bundle\ElementTaskBundle\Task\Type;
 
 /**
- * General element task type
+ * General node task type
  *
  * @author Stephan Wentz <sw@brainbits.net>
  */
-class GeneralType extends AbstractType
+class GeneralNodeType extends AbstractNodeType
 {
     /**
      * {@inheritdoc}
      */
     public function getName()
     {
-        return 'element.general';
+        return 'element_tasks.general_node';
     }
 
     /**
@@ -30,22 +30,14 @@ class GeneralType extends AbstractType
      */
     public function getRequiredParameters()
     {
-        return array('type', 'type_id');
+        return array('id');
     }
 
     /**
-     * @return string
+     * {@inheritdoc}
      */
-    protected function getTitleKey()
+    protected function getSummaryKey()
     {
-        return 'elements.task_general';
-    }
-
-    /**
-     * @return string
-     */
-    protected function getTextKey()
-    {
-        return 'elements.task_general_template';
+        return 'elements_tasks.general_node_template';
     }
 }
