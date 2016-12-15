@@ -78,7 +78,7 @@ class TaskListener implements EventSubscriberInterface
                 'type_id' => $node->getId(),
                 'language' => $language
             ],
-            'element.publish',
+            'element_tasks.publish_node',
             $this->tokenStorage->getToken()->getUser()->getId()
         );
     }
@@ -105,7 +105,7 @@ class TaskListener implements EventSubscriberInterface
                 'type_id' => $node->getId(),
                 'language' => $language
             ],
-            'element.set_offline',
+            'element_tasks.set_node_offline',
             $this->tokenStorage->getToken()->getUser()->getId()
         );
     }
@@ -131,7 +131,7 @@ class TaskListener implements EventSubscriberInterface
                 'type' => 'element',
                 'type_id' => $node->getId()
             ],
-            'element.delete',
+            'element_tasks.delete_node',
             $this->tokenStorage->getToken()->getUser()->getId()
         );
     }
