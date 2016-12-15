@@ -17,7 +17,7 @@ use Phlexible\Bundle\TreeBundle\Model\TreeNodeInterface;
 use Symfony\Component\Translation\TranslatorInterface;
 
 /**
- * Abstract element task type.
+ * Abstract node task type.
  *
  * @author Stephan Wentz <sw@brainbits.net>
  */
@@ -96,7 +96,12 @@ abstract class AbstractNodeType implements TypeInterface
         return 'bla';
     }
 
-    /*
+    /**
+     * @return string
+     */
+    abstract protected function getSummaryKey();
+
+    /**
      * Return associative array for placeholder replacement
      *
      * @return array
