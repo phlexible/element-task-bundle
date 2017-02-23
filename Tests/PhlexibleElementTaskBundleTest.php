@@ -18,6 +18,8 @@ use PHPUnit\Framework\TestCase;
  * Element task bundle test.
  *
  * @author Stephan Wentz <sw@brainbits.net>
+ *
+ * @covers \Phlexible\Bundle\ElementTaskBundle\PhlexibleElementTaskBundle
  */
 class PhlexibleElementTaskBundleTest extends TestCase
 {
