@@ -110,7 +110,7 @@ class LoadDataListener
             'id' => $task->getId(),
             'status' => $task->getFiniteState(),
             'type' => $type,
-            'generic' => 0,// $task->isGeneric() ? 1 : 0, @TODO
+            'generic' => 0, // $task->isGeneric() ? 1 : 0, @TODO
             'text' => 'test', //$task->getTitle(),
             'creator' => $this->userManager->find($createUserId)->getDisplayName(),
             'recipient' => $this->userManager->find($assignedUserId)->getDisplayName(),
