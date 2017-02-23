@@ -101,12 +101,7 @@ abstract class AbstractNodeType implements TypeInterface
      */
     abstract protected function getSummaryKey();
 
-    /**
-     * Return associative array for placeholder replacement
-     *
-     * @return array
-     */
-        /*
+    /*
     protected function _getTextKeys()
     {
         $textKeys = parent::_getTextKeys();
@@ -140,14 +135,7 @@ abstract class AbstractNodeType implements TypeInterface
 
         return $textKeys;
     }
-        */
 
-    /*
-     * Return the task link
-     *
-     * @return array
-     */
-        /*
     protected function _getLink()
     {
         if (empty($this->_payload['tid'])) {
@@ -178,5 +166,5 @@ abstract class AbstractNodeType implements TypeInterface
 
         return $menuItem;
     }
-        */
+    */
 }

@@ -12,13 +12,14 @@
 namespace Phlexible\Bundle\ElementTaskBundle\Tests;
 
 use Phlexible\Bundle\ElementTaskBundle\PhlexibleElementTaskBundle;
+use PHPUnit\Framework\TestCase;
 
 /**
  * Element task bundle test.
  *
  * @author Stephan Wentz <sw@brainbits.net>
  */
-class PhlexibleElementTaskBundleTest extends \PHPUnit_Framework_TestCase
+class PhlexibleElementTaskBundleTest extends TestCase
 {
     public function testBundle()
     {
